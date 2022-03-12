@@ -5,14 +5,17 @@ import ColorBlock from './Components/ColorBlock'
 import ColorForm from './Components/ColorForm'
 
 function App() {
-  let [colors, setColors] = useState(['violet', 'blue', 'lightblue', 'green', 'greenyellow', 'yellow', 'orange', 'red'])
+  let [colors, setColors] = useState([
+    'violet', 'blue', 'lightblue', 'green', 
+    'greenyellow', 'yellow', 'orange', 'red'
+  ])
   let colorMap = colors.map((color, index) => {
     return (
-      <ColorBlock color={color} />
+      <ColorBlock key={index} color={color} />
     )
   })
   const addColor = (newColor) => {
-    setColors([colors, newColor])
+    setColors([...colors, newColor])
   }
   return (
     <div className="App">
